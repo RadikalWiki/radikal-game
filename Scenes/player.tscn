@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scripts/player.gd" type="Script" id=1]
+[ext_resource path="res://Assets/car.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 83.6644, 52.4166 )
+
+[node name="player" type="KinematicBody2D"]
+
+position = Vector2( 82.305, 41.201 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+scale = Vector2( 0.221824, 0.221824 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+
+visible = false
+position = Vector2( 0, 0.191608 )
+scale = Vector2( 1, 1.00346 )
+shape = SubResource( 1 )
+
+
